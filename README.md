@@ -129,7 +129,6 @@ Used to estimate values between known data points.
 ## 👨‍💻 Author
 
 **Prince Rathore**
-B.Tech Computer Science Student
 
 ---
 
