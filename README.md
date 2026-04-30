@@ -128,7 +128,7 @@ Used to estimate values between known data points.
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Prince Rathore**
 B.Tech Computer Science Student
 
 ---
