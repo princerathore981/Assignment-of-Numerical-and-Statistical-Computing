@@ -1,19 +1,16 @@
 import numpy as np
 
-def gauss_seidel(A, B, tol=1e-6, max_iter=100):
-    n = len(B)
-    X = np.zeros(n)
+A = np.array([[10, -1, 2],
+              [-1, 11, -1],
+              [2, -1, 10]])
 
-    for _ in range(max_iter):
-        X_new = np.copy(X)
+B = np.array([6, 25, -11])
 
-        for i in range(n):
-            s1 = sum(A[i][j]*X_new[j] for j in range(i))
-            s2 = sum(A[i][j]*X[j] for j in range(i+1, n))
-            X_new[i] = (B[i] - s1 - s2) / A[i][i]
+x = np.zeros(3)
 
-        if np.allclose(X, X_new, atol=tol):
-            return X_new
-        X = X_new
+for _ in range(10):
+    for i in range(3):
+        s = sum(A[i][j]*x[j] for j in range(3) if j != i)
+        x[i] = (B[i] - s) / A[i][i]
 
-    return X
+print("Solution:", x)
