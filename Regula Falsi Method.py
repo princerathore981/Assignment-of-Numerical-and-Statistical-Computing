@@ -1,14 +1,17 @@
-def regula_falsi(f, a, b, tol=1e-6, max_iter=100):
-    if f(a) * f(b) >= 0:
-        print("Invalid interval")
-        return None
+def f(x):
+    return x**3 - x - 2
 
-    for _ in range(max_iter):
-        c = (a*f(b) - b*f(a)) / (f(b) - f(a))
-        if abs(f(c)) < tol:
-            return c
-        elif f(a) * f(c) < 0:
-            b = c
-        else:
-            a = c
-    return c
+a = 1
+b = 2
+tol = 0.0001
+
+while True:
+    c = (a*f(b) - b*f(a)) / (f(b) - f(a))
+    if abs(f(c)) < tol:
+        break
+    elif f(a) * f(c) < 0:
+        b = c
+    else:
+        a = c
+
+print("Root:", c)
